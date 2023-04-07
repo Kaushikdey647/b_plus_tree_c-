@@ -9,6 +9,14 @@ B + Tree Implementation | C++
 
 ## Getting Started
 
+
+- To get started with this library, you can:
+
+  - Clone the repo: `git clone https://github.com/Kaushikdey647/b_plus_tree_cpp`
+  - Edit the code at `/main.cpp`
+  - Compile and run the code using `make && ./bin/bptree`
+  - Clean up the build files using `make clean`
+
 - To use the B+ tree implementation, simply include the bptree.h and node.h header files in your project. Then, create a bptree object with the desired degree for the internal and leaf nodes. You can then perform search, insertion, and deletion operations on the tree using the member functions provided by the bptree class.
 
 ```cpp
@@ -61,12 +69,6 @@ clean:
 
 ```
 
-- To try this library, you can:
-
-  - Clone the repo: `git clone https://github.com/Kaushikdey647/b_plus_tree_cpp`
-  - Edit the code at `/main.cpp`
-  - Compile and run the code using `make && ./bin/bptree`
-  - Clean up the build files using `make clean`
 
 ## Read More about B+ Tree
 
