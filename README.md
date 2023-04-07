@@ -85,4 +85,4 @@ This B+ tree implementation is licensed under the MIT License. See the LICENSE f
 
 ## Acknowledgements
 
-This implementation was inspired by the B+ tree data structure described in the book "Introduction to Algorithms" by Cormen, Leiserson, Rivest, and Stein. I thank [Dr. Padmalochan Bera](https://www.iitbbs.ac.in/profile.php/padmalochanbera/), our instructor at Database Systems Course at IIT Bhubaneswar, without whose stimulating assignments with tight deadlines, this implementation would not have been possible. (I would be too lazy to implement it, and would have just used the STL map instead.)
+This implementation was inspired by the B+ tree data structure described in the book "Introduction to Algorithms" by Cormen, Leiserson, Rivest, and Stein. I thank [Dr. Padmalochan Bera](https://www.iitbbs.ac.in/profile.php/padmalochanbera/), our instructor at Database Systems Course at IIT Bhubaneswar, without whose stimulating assignments with tight deadlines, this implementation would not have been possible. (I still do not get the point of going through the pain of implementing though, feels like a sadist desire for intellectual torture)
