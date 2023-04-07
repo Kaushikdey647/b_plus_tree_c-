@@ -15,6 +15,7 @@ public:
     bool insert(int key);
     bool remove(int key);
     node* get_root();
+    void print_cli();
 };
 
 #endif

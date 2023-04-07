@@ -1,5 +1,12 @@
 #include "bptree.h"
 
+/**
+ * @brief Insert a key into the tree
+ * 
+ * @param key 
+ * @return true 
+ * @return false 
+ */
 bool bptree::insert(int key){
 
     // if root is null, well, create one
@@ -45,6 +52,8 @@ bool bptree::insert(int key){
 
     //cursor, right_node and middle_key
 
+    
+
     while( parent_queue.size() > 0 ){
         //get parent
         node* parent = parent_queue.back();
@@ -56,14 +65,14 @@ bool bptree::insert(int key){
         parent->children.insert(parent->children.begin()+index+1, right_node);
         
         //if there is space in the parent, insert it
-        if(parent->keys.size() < internal_deg){
+        if(parent->keys.size() <= internal_deg){
             return true;
         }
 
         // Else Split Split SPLIT!!!
-        std::pair<node*,int> split_result = parent->split();
-        node* right_node = split_result.first;
-        int middle_key = split_result.second;
+        split_result = parent->split();
+        right_node = split_result.first;
+        middle_key = split_result.second;
 
         // if parent is null, create one as cursor is root
         if(parent == root){

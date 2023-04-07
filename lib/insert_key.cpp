@@ -1,5 +1,12 @@
 #include "node.h"
 
+/**
+ * @brief Insert a key into the node
+ * 
+ * @param key 
+ * @return true 
+ * @return false 
+ */
 bool node::insert_key(int key){
     try{
         unsigned int insert_index = 

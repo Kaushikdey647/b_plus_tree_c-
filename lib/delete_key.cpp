@@ -1,5 +1,12 @@
 #include "node.h"
 
+/**
+ * @brief Delete a key from the node
+ * 
+ * @param key 
+ * @return true 
+ * @return false 
+ */
 bool node::delete_key(int key){
     try{
         unsigned int delete_index = 

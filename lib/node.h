@@ -18,6 +18,7 @@ public:
     bool insert_key(int key);
     bool delete_key(int key);
     unsigned int search_key(int key);
+    void print_cli_node();
 };
 
 #endif

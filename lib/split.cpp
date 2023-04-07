@@ -1,5 +1,10 @@
 #include "node.h"
 
+/**
+ * @brief Split the node
+ * 
+ * @return std::pair<node*,int> 
+ */
 std::pair<node*,int> node::split(){
     //this node will be the left node
     //a new node will be created for right
