@@ -61,6 +61,13 @@ clean:
 
 ```
 
+- To try this library, you can:
+
+  - Clone the repo: `git clone https://github.com/Kaushikdey647/b_plus_tree_cpp`
+  - Edit the code at `/main.cpp`
+  - Compile and run the code using `make && ./bin/bptree`
+  - Clean up the build files using `make clean`
+
 ## Read More about B+ Tree
 
 - [Wikipedia](https://en.wikipedia.org/wiki/B%2B_tree)
