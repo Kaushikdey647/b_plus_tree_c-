@@ -15,14 +15,15 @@ bool bptree::insert(int key){
     while(!cursor->is_leaf){
         //push the cursor to the parent queue
         parent_queue.push_back(cursor);
-        //TODO: Set the cursor and parent
         int index = cursor->search_key(key);
         cursor = cursor->children[index];
     }
 
-    //if there is space in the leaf, insert it
-    if(cursor->keys.size() < leaf_deg){
-        cursor->insert_key(key);
+    //insert the key in the leaf
+    cursor->insert_key(key);
+
+    //if there is space in the leaf just stop there
+    if(cursor->keys.size() <= leaf_deg){
         return true;
     }
 
@@ -52,7 +53,6 @@ bool bptree::insert(int key){
         //insert cursor, right_node and middle_key
         int index = parent->search_key(middle_key);
         parent->keys.insert(parent->keys.begin()+index, middle_key);
-        parent->children.insert(parent->children.begin()+index, cursor);
         parent->children.insert(parent->children.begin()+index+1, right_node);
         
         //if there is space in the parent, insert it
@@ -74,4 +74,6 @@ bool bptree::insert(int key){
             return true;
         }
     }
+
+    return false;
 }
