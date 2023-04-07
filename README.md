@@ -1,6 +1,6 @@
 # B+ Tree Implementation in C++
 
-This repository contains an implementation of a B+ tree data structure in C++. The implementation consists of two classes: bptree and node, which represent the B+ tree and its nodes, respectively.
+B + Tree Implementation | C++
 
 ## Features
 
@@ -9,7 +9,7 @@ This repository contains an implementation of a B+ tree data structure in C++. T
 
 ## Getting Started
 
-To use the B+ tree implementation, simply include the bptree.h and node.h header files in your project. Then, create a bptree object with the desired degree for the internal and leaf nodes. You can then perform search, insertion, and deletion operations on the tree using the member functions provided by the bptree class.
+- To use the B+ tree implementation, simply include the bptree.h and node.h header files in your project. Then, create a bptree object with the desired degree for the internal and leaf nodes. You can then perform search, insertion, and deletion operations on the tree using the member functions provided by the bptree class.
 
 ```cpp
 #include "bptree.h"
@@ -28,6 +28,43 @@ int main() {
     my_tree.remove(42);
 }
 ```
+
+- Then to compile successfully, you need to create object files for the source at /lib/ and link them with your main.cpp file. An exemplary Makefile is created and shipped with this code. You can use it as a template to create your own Makefile.
+
+```makefile
+CXX=g++
+CXXFLAGS=-Wall -Wextra -pedantic -std=c++17 -Ilib
+LDFLAGS=-Llib
+LDLIBS=
+
+SRCDIR=.
+OBJDIR=obj
+BINDIR=bin
+
+SOURCES=$(wildcard $(SRCDIR)/lib/*.cpp $(SRCDIR)/main.cpp)
+OBJECTS=$(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SOURCES))
+
+.PHONY: all clean
+
+all: $(BINDIR)/bptree
+
+$(BINDIR)/bptree: $(OBJECTS)
+    @mkdir -p $(BINDIR)
+    $(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+    @mkdir -p $(@D)
+    $(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+    $(RM) -r $(OBJDIR) $(BINDIR)
+
+```
+
+## Read More about B+ Tree
+
+- [Wikipedia](https://en.wikipedia.org/wiki/B%2B_tree)
+- [Scaler](https://www.scaler.com/topics/data-structures/b-plus-trees/)
 
 ## Contributing
 
